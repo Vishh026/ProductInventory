@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+:root {
+  --grey-color: #434341;
+  --yellow-color: #AD9069;
+  --text-color: #F3F1E0;
+  --black-Color: #2B2B2B;
+}
