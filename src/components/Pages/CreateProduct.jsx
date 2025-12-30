@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import Cart from "../Cart";
 import { nanoid } from "nanoid";
 import { ProductContext } from "../../context/ProductContext";
 
-const Profile = () => {
+const CreateProduct = () => {
   const { products, setProducts } = useContext(ProductContext);
 
   const {
@@ -15,10 +14,9 @@ const Profile = () => {
   } = useForm();
 
   const createProductHandler = (data) => {
-    const updatedProducts = [...products, { ...data, id: nanoid }];
+   const updatedProducts = [...products, { ...data, id: nanoid() }];
+   
     setProducts(updatedProducts);
-
-    // localStorage.setItem("products",JSON.stringify(updatedProducts))
     reset();
   };
 
@@ -92,4 +90,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default CreateProduct;
